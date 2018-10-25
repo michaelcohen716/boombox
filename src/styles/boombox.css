@@ -1,0 +1,19 @@
+.boombox {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard {
+    height: 200px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 500px;
+}
