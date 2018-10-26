@@ -1,0 +1,22 @@
+.song-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.song-info div {
+    margin: 2px;
+}
+
+.song-info-track {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+
+.song-info-artist {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+}

@@ -5,4 +5,15 @@ body {
   -o-background-size: cover;
   background-size: cover;
   color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
+.base {
+  display: flex;
+  flex-direction: row;
+  height: 450px;
+}
+
+.speakers {
+  width: 35%;
 }

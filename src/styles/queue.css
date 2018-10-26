@@ -1,0 +1,43 @@
+.queue {
+    width: 35%;
+    /* background-color:  red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.queue-item img {
+    height: 45px;
+    width: auto;
+}
+
+.inactive-queue-item {
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.queue-item {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    /* margin: 5px; */
+    border: 0.1px groove black;
+    padding: 4px;
+}
+
+.queue-item-info {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    justify-content:  center;
+    margin-top: -2px;
+}
+
+.track-name {
+    font-weight: bold;
+}
+
+.artist-name {
+    color: #E8E8E8
+}
