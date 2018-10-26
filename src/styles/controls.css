@@ -3,8 +3,13 @@
     width: 30%;
     height: 105%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     margin-top: -1.7%;
     box-shadow: 2px -2px 4px 4px rgba(0,0,0,0.75);
-}   
+}  
+
+.play-pause-icon {
+    width: 200px;
+    height: auto;
+}

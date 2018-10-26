@@ -8,7 +8,7 @@ class Dashboard extends Component {
         return (
             <div className="dashboard">
                 <div className="belongs-to">
-                    belongs to
+                    
                 </div>
                 <SongInfo />
                 <Queue />
