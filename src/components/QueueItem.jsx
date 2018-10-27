@@ -7,7 +7,7 @@ class QueueItem extends Component {
         const inactiveClass = this.props.inactive ? 'inactive-queue-item' : '';
         return (
             <div className={`queue-item ${inactiveClass}`}>
-                <img src={tracklist} />
+                <img src={tracklist} alt="tracklist" />
                 <div className="queue-item-info">
                     <div className="track-name">
                         Hyperparadise

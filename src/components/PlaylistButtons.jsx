@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import "../styles/playlistButtons.css";
+import '../styles/playlistButtons.css';
 
 class PlaylistButtons extends Component {
     render(){
-        const buttons = ["1", "2", "3", "4"].map(b => {
-            const buttonClass = b !== "2" ? "pb-inactive" : "pb-active";
+        const buttons = ["1", "2", "3", "4"].map((b, i) => {
+            const buttonClass = b !== "3" ? "pb-inactive" : "pb-active";
             return (
-                <div className={`playlist-button ${buttonClass}`}>
+                <div className={`playlist-button ${buttonClass}`} key={i} >
                     {b}
                 </div>
             )

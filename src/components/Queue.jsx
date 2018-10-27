@@ -12,7 +12,7 @@ class Queue extends Component {
 
         const queueItems = tracks.map((s, i) => {
             const inactive = i !== 0 ? true : false;
-            return <QueueItem inactive={inactive}/>
+            return <QueueItem inactive={inactive} key={i}/>
         })
 
         return (
