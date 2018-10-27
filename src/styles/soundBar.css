@@ -1,14 +1,12 @@
 .rangeslider {
-  margin: 20px 0;
+  margin: 30px 15px;
   position: relative;
   -ms-touch-action: none;
   touch-action: none;
 }
 
-
 .rangeslider .rangeslider__handle {
   background: black;
-  /* border: 1px solid #ccc; */
   cursor: pointer;
   display: inline-block;
   position: absolute;
@@ -23,16 +21,22 @@
 .rangeslider-horizontal .rangeslider__fill {
   height: 100%;
   background-color: transparent;
-  border-radius: 10px;
   top: 0;
+  box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.75);
+}
+
+.rangeslider__fill {
+    width: 100% !important;
 }
 
 .rangeslider-horizontal .rangeslider__handle {
   width: 30px;
-  height: 30px;
-  border-radius: 30px;
+  height: 50px;
+  border-radius: 3px;
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
+  background: black;
+
 }
 
 .rangeslider-horizontal .rangeslider__handle:after {
@@ -47,13 +51,9 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset, 0 -1px 3px rgba(0, 0, 0, 0.4) inset;
 }
 
-
-
 input[type='range']{
     -webkit-appearance: none;
-
 }
-
 
 :focus {
     -webkit-appearance: none;

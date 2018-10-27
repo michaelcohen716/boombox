@@ -4,10 +4,6 @@
     flex-direction: row;
 }
 
-.belongs-to {
-    width: 35%;
-}
-
 .song-info {
     width: 30%;
     margin-top: -35px;
