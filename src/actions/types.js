@@ -1,0 +1,1 @@
+export const PLAY_OR_PAUSE = 'play_or_pause'

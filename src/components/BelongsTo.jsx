@@ -7,7 +7,8 @@ import "../styles/belongsTo.css";
 
 class BelongsTo extends Component {
     state = {
-        photo: null    
+        photo: "me"    
+        // photo: null    
     }
 
     setRef = webcam => {
@@ -62,7 +63,7 @@ class BelongsTo extends Component {
 
                 </div>
                 <div className="capture">
-                    <img src={captureImageSource} onClick={this.capture} className="camera-icon"/>
+                    <img src={captureImageSource} onClick={this.capture} className="camera-icon" alt="capture"/>
                 </div>
             </div>
         )

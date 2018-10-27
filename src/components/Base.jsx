@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Controls from "./Controls";
+import Controls from "../containers/ControlsContainer";
 import Speaker from "./Speaker";
 import "../App.css";
 
