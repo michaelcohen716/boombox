@@ -6,6 +6,8 @@ import './App.css';
 // Alen Krummenacher, CH 
 // icon 54 
 // GreenHill
+// Khaidir Fajri
+// zalhan
 
 class App extends Component {
   render() {

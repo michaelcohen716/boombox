@@ -2,12 +2,25 @@
     width: 35%;
     display: flex;
     flex-direction: row;
+    margin: auto 0;
+    justify-content: center;
 }
 
-.webcam-holder {
-    height: 250px;
-    width: 250px;
+.webcam-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.boombox-owner {
+    color: #E8E8E8;
     margin: 0 auto;
+}
+
+
+.webcam-holder {
+    height: 150px;
+    width: 150px;
+    margin-top: 5px;
     position: relative;
     overflow: hidden;
     background-color: transparent;
@@ -35,4 +48,15 @@
     height: 150px;
     width: 150px;
     border-radius: 100%;
+}
+
+.capture {
+    margin: auto 0;
+    padding: 10px;
+}
+
+.camera-icon {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
 }

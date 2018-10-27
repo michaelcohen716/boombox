@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Webcam from "react-webcam";
+import camera from "../assets/camera.png";
+import retry from "../assets/retry.png";
 import "../styles/belongsTo.css";
 
 
@@ -13,9 +15,12 @@ class BelongsTo extends Component {
     };
 
     capture = () => {
-        const photo = this.webcam.getScreenshot();
-        this.setState({ photo });
-        // console.log(imageSrc)
+        if(this.state.photo){
+            this.setState({ photo: null });
+        } else {
+            const photo = this.webcam.getScreenshot();
+            this.setState({ photo });
+        }
     };
 
     render(){
@@ -43,13 +48,21 @@ class BelongsTo extends Component {
                 />
         )
 
+        const captureImageSource = photo ? retry : camera;
+
         return (
             <div className="belongs-to">
-                <div className="webcam-holder">
-                    {profilePhoto}
+                <div className="webcam-area">
+                    <div className="boombox-owner">
+                        Boombox Owner
+                    </div>
+                    <div className="webcam-holder">
+                        {profilePhoto}
+                    </div>
+
                 </div>
                 <div className="capture">
-                    <button onClick={this.capture}>Capture photo</button>
+                    <img src={captureImageSource} onClick={this.capture} className="camera-icon"/>
                 </div>
             </div>
         )
