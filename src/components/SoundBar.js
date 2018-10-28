@@ -11,6 +11,7 @@ class SoundBar extends Component {
 
     componentDidMount(){
         this.audio = document.getElementById('audio');
+        this.audio.volume = this.state.value / 100;
     }
 
     componentWillReceiveProps(nextProps){
@@ -30,7 +31,9 @@ class SoundBar extends Component {
         this.setState({ audio }, () => {
             this.audio.pause();
             this.audio.load();
-            this.audio.play();
+            if(!this.props.paused){
+                this.audio.play();
+            }
         })
     }
 
@@ -38,11 +41,12 @@ class SoundBar extends Component {
         this.setState({
             value
         })
+
+        this.audio.volume = value / 100;
     }
 
     render() {
         const { value, audio } = this.state;
-        // const { source } = this.props.nowPlaying;
         
         return (
             <div>

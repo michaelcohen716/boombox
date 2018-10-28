@@ -2,10 +2,14 @@ import { connect } from "react-redux";
 import Controls from '../components/Controls';
 import { 
     playOrPause,
-    playNextSong     
+    playPreviousSong,
+    playNextSong,     
+    playRandomSong
 } from '../actions';
 
 export default connect(null, { 
     playOrPause,
-    playNextSong 
+    playPreviousSong,
+    playNextSong,
+    playRandomSong
 })(Controls);

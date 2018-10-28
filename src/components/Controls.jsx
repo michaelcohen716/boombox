@@ -13,7 +13,7 @@ class Controls extends Component {
     }
 
     render(){
-        const { playNextSong, playOrPause } = this;
+        const { playPreviousSong, playNextSong, playOrPause, playRandomSong } = this;
         const playOrPauseImage = this.state.paused ? play : pause;
 
         return (
@@ -23,9 +23,9 @@ class Controls extends Component {
                     <img src={playOrPauseImage} className="play-pause-icon" alt={'playOrPauseImage'}/>
                 </div>
                 <div className="extra-controls">
-                    <img src={fastForward} className="back" alt="back" onClick={playNextSong}/>
-                    <img src={fastForward} className="next" alt="next"/>
-                    <img src={shuffle} className="shuffle" alt="shuffle"/>
+                    <img src={fastForward} className="back" alt="back" onClick={playPreviousSong}/>
+                    <img src={fastForward} className="next" alt="next" onClick={playNextSong}/>
+                    <img src={shuffle} className="shuffle" alt="shuffle" onClick={playRandomSong}/>
                 </div>
                 <PlaylistButtons />
             </div>
@@ -37,8 +37,16 @@ class Controls extends Component {
         this.props.playOrPause();
     }
 
+    playPreviousSong = () => {
+        this.props.playPreviousSong();
+    }
+
     playNextSong = () => {
         this.props.playNextSong();
+    }
+
+    playRandomSong = () => {
+        this.props.playRandomSong();
     }
 }
 

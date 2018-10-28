@@ -5,7 +5,8 @@ export default {
         artist: 'Kendrick Lamar',
         playlist: 'Hip Hop',
         source: 'HolUp.mp3',
-        next: 'BigPoppa'
+        next: 'BigPoppa',
+        previous: 'AmericanEyes'
     },
 
     BigPoppa: {
@@ -13,7 +14,8 @@ export default {
         artist: 'Audio Aquarium',
         playlist: 'Hip Hop',
         source: 'BigPoppa.mp3',
-        next: 'Grammy'
+        next: 'Grammy',
+        previous: 'HolUp'
     },
 
     Grammy: {
@@ -21,7 +23,8 @@ export default {
         artist: 'Purity Ring',
         playlist: 'Hip Hop',
         source: 'Grammy.mp3',
-        next: 'CantTellMeNothing'
+        next: 'CantTellMeNothing',
+        previous: 'BigPoppa'
     },
 
     CantTellMeNothing: {
@@ -29,7 +32,8 @@ export default {
         artist: 'Kanye West',
         playlist: 'Hip Hop',
         source: 'CantTellMeNothing.mp3',
-        next: 'Hermitude'
+        next: 'Hermitude',
+        previous: 'Grammy'
     },
 
     // Future
@@ -38,7 +42,8 @@ export default {
         artist: 'Flume',
         playlist: 'Future',
         source: 'Hermitude.mp3',
-        next: 'RunningWild'
+        next: 'RunningWild',
+        previous: 'CantTellMeNothing'
     },
 
     RunningWild: {
@@ -46,15 +51,17 @@ export default {
         artist: 'Morgan Page',
         playlist: 'Future',
         source: 'RunningWild.mp3',
-        next: 'OneDayTheyllKnow'
+        next: 'OneDayTheyllKnow',
+        previous: 'Hermitude'
     },
 
     OneDayTheyllKnow: {
-        name: 'One Day They\'ll Know(ODESZA Remix)',
+        name: 'One Day They\'ll Know (ODESZA Remix)',
         artist: 'Pretty Lights',
         playlist: 'Future',
         source: 'OneDayTheyllKnow.mp3',
-        next: 'Revolution'
+        next: 'Revolution',
+        previous: 'RunningWild'
     },
 
     Revolution: {
@@ -62,7 +69,8 @@ export default {
         artist: 'Diplo',
         playlist: 'Future',
         source: 'Revolution.mp3',
-        next: 'MisoSoup'
+        next: 'MisoSoup',
+        previous: 'OneDayTheyllKnow'
     },
 
     // Electronica
@@ -71,15 +79,17 @@ export default {
         artist: 'Yultron',
         playlist: 'Electronica',
         source: 'MisoSoup.mp3',
-        next: 'RoomForHappiness'
+        next: 'RoomForHappiness',
+        previous: 'Revolution'
     },
 
     RoomForHappiness: {
-        name: 'Room for Happiness (Cignature Remix',
+        name: 'Room for Happiness (Cignature Remix)',
         artist: 'Kaskade',
         playlist: 'Electronica',
         source: 'RoomForHappiness.mp3',
-        next: 'HighHighsToLowLows'
+        next: 'HighHighsToLowLows',
+        previous: 'MisoSoup'
     },
     
     HighHighsToLowLows: {
@@ -87,7 +97,8 @@ export default {
         artist: 'Lola Zouai',
         playlist: 'Electronica',
         source: 'HighHighsToLowLows.mp3',
-        next: 'WickedGame'
+        next: 'WickedGame',
+        previous: 'RoomForHappiness'
     },
 
     WickedGame: {
@@ -95,7 +106,8 @@ export default {
         artist: 'Tula',
         playlist: 'Electronica',
         source: 'WickedGame.mp3',
-        next: 'FeelItStill'
+        next: 'FeelItStill',
+        previous: 'HighHighsToLowLows'
     },
 
     // Alternative 
@@ -104,7 +116,8 @@ export default {
         artist: 'Portugal. The Man',
         playlist: 'Alternative',
         source: 'FeelItStill.mp3',
-        next: 'TheLessIKnowTheBetter'
+        next: 'TheLessIKnowTheBetter',
+        previous: 'WickedGame'
     },
 
     TheLessIKnowTheBetter: {
@@ -112,7 +125,8 @@ export default {
         artist: 'Tame Impala',
         playlist: 'Alternative',
         source: 'TheLessIKnowTheBetter.mp3',
-        next: 'Breezeblocks'
+        next: 'Breezeblocks',
+        previous: 'FeelItStill'
     },
 
     Breezeblocks: {
@@ -120,7 +134,8 @@ export default {
         artist: 'Alt-J',
         playlist: 'Alternative',
         source: 'Breezeblocks.mp3',
-        next: 'AmericanEyes'
+        next: 'AmericanEyes',
+        previous: 'TheLessIKnowTheBetter'
     },
 
     AmericanEyes: {
@@ -128,7 +143,8 @@ export default {
         artist: 'Promises Ltd.',
         playlist: 'Alternative',
         source: 'AmericanEyes.mp3',
-        next: 'HolUp'
+        next: 'HolUp',
+        previous: 'Breezeblocks'
     }
 
 }

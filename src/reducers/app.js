@@ -1,14 +1,16 @@
 import {
     PLAY_OR_PAUSE,
+    PLAY_PREVIOUS_SONG,
     PLAY_NEXT_SONG,
+    PLAY_RANDOM_SONG,
     SELECT_QUEUE_ITEM
 } from "../actions/types";
 import tracklist from "../tracklist";
 
 const QUEUE_LENGTH = 3;
+const NUM_TRACKS = 16;
 
 const INITIAL_STATE = {
-    // volume: 25,
     paused: true,
     queue: [
         tracklist['HolUp'], 
@@ -26,16 +28,45 @@ export default (state = INITIAL_STATE, action) => {
             }
         }
 
+        case PLAY_PREVIOUS_SONG: {
+            let queue = state.queue.slice(0, 2);
+            const previousSong = [tracklist[queue[0].previous]];
+            queue = previousSong.concat(queue);
+
+            return {
+                ...state,
+                queue
+            }
+        }
+
         case PLAY_NEXT_SONG: {
             const queue = state.queue.slice(1);
             const newSong = tracklist[queue[1].next];
-            queue.push(tracklist[newSong]);
+            queue.push(newSong);
 
             return {
                 ...state,
                 queue
             }
         } 
+
+        case PLAY_RANDOM_SONG: {
+            const queue = [];
+            const trackIndex = Math.floor(Math.random() * NUM_TRACKS);
+            const trackKey = Object.keys(tracklist)[trackIndex];
+            const nextTrack = tracklist[trackKey];
+            queue.push(nextTrack);
+
+            while(queue.length < QUEUE_LENGTH){
+                const newSong = tracklist[queue[queue.length - 1].next];
+                queue.push(newSong);    
+            }
+            
+            return {
+                ...state,
+                queue
+            }
+        }
 
         case SELECT_QUEUE_ITEM: {
             const queue = state.queue.slice(action.selectedIndex);
