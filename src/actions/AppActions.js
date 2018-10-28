@@ -3,7 +3,8 @@ import {
     PLAY_PREVIOUS_SONG,
     PLAY_NEXT_SONG,
     PLAY_RANDOM_SONG,
-    SELECT_QUEUE_ITEM
+    SELECT_QUEUE_ITEM,
+    SELECT_PLAYLIST
 } from './types';
 
 export const playOrPause = () => {
@@ -34,5 +35,12 @@ export const selectQueueItem = (selectedIndex) => {
     return {
         type: SELECT_QUEUE_ITEM,
         selectedIndex
+    }
+}
+
+export const selectPlaylist = (playlist) => {
+    return {
+        type: SELECT_PLAYLIST,
+        playlist
     }
 }

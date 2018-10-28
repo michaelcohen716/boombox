@@ -4,12 +4,20 @@ import {
     playOrPause,
     playPreviousSong,
     playNextSong,     
-    playRandomSong
+    playRandomSong,
+    selectPlaylist
 } from '../actions';
 
-export default connect(null, { 
+const mapStateToProps = state => {
+    return {
+        activePlaylist: state.app.queue[0].playlist
+    }
+}
+
+export default connect(mapStateToProps, { 
     playOrPause,
     playPreviousSong,
     playNextSong,
-    playRandomSong
+    playRandomSong,
+    selectPlaylist
 })(Controls);

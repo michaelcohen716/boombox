@@ -14,6 +14,7 @@ class Controls extends Component {
 
     render(){
         const { playPreviousSong, playNextSong, playOrPause, playRandomSong } = this;
+        const { selectPlaylist, activePlaylist } = this.props;
         const playOrPauseImage = this.state.paused ? play : pause;
 
         return (
@@ -27,7 +28,9 @@ class Controls extends Component {
                     <img src={fastForward} className="next" alt="next" onClick={playNextSong}/>
                     <img src={shuffle} className="shuffle" alt="shuffle" onClick={playRandomSong}/>
                 </div>
-                <PlaylistButtons />
+                <PlaylistButtons 
+                    selectPlaylist={selectPlaylist}
+                    activePlaylist={activePlaylist}/>
             </div>
         )
     }

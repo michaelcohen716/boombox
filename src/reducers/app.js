@@ -3,7 +3,8 @@ import {
     PLAY_PREVIOUS_SONG,
     PLAY_NEXT_SONG,
     PLAY_RANDOM_SONG,
-    SELECT_QUEUE_ITEM
+    SELECT_QUEUE_ITEM,
+    SELECT_PLAYLIST
 } from "../actions/types";
 import tracklist from "../tracklist";
 
@@ -71,6 +72,29 @@ export default (state = INITIAL_STATE, action) => {
         case SELECT_QUEUE_ITEM: {
             const queue = state.queue.slice(action.selectedIndex);
             while (queue.length < QUEUE_LENGTH){
+                const newSong = tracklist[queue[queue.length - 1].next];
+                queue.push(newSong);
+            }
+
+            return {
+                ...state,
+                queue
+            }
+        }
+
+        case SELECT_PLAYLIST: {
+            const queue = [];
+            const trackKeys = Object.keys(tracklist);
+
+            for(let i = 0; i < trackKeys.length; i++){
+                const track = tracklist[trackKeys[i]];
+                if(track.playlist === action.playlist){
+                    queue.push(track);
+                    break;
+                }
+            }
+
+            while (queue.length < QUEUE_LENGTH) {
                 const newSong = tracklist[queue[queue.length - 1].next];
                 queue.push(newSong);
             }
