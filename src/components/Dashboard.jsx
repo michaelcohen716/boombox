@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SongInfo from "./SongInfo";
-import Queue from "./Queue";
+import SongInfo from "../containers/SongInfoContainer";
+import Queue from "../containers/QueueContainer";
 import BelongsTo from "./BelongsTo";
 import "../styles/dashboard.css";
 

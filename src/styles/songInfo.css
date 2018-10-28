@@ -7,10 +7,11 @@
 
 .song-info div {
     margin: 2px;
+    text-align: center;
 }
 
 .song-info-track {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     letter-spacing: 0.8px;
 }

@@ -4,15 +4,15 @@ import "../styles/queue.css";
 
 class Queue extends Component {
     render(){
-        const tracks = [
-            { track: "Hyperparadise", artist: "Flume" },
-            { track: "Space Jam", artist: "Michael Jordan" },
-            { track: "Old McDonald", artist: "Farmer"}
-        ]
-
-        const queueItems = tracks.map((s, i) => {
+        const queueItems = this.props.queue.map((t, i) => {
             const inactive = i !== 0 ? true : false;
-            return <QueueItem inactive={inactive} key={i}/>
+
+            return <QueueItem 
+                        inactive={inactive} 
+                        track={t} 
+                        key={i}
+                        index={i}
+                        selectQueueItem={this.props.selectQueueItem}/>
         })
 
         return (

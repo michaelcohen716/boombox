@@ -3,16 +3,17 @@ import "../styles/songInfo.css";
 
 class SongInfo extends Component {
     render(){
+        const { name, artist, playlist } = this.props.nowPlaying;
         return (
             <div className="song-info">
                 <div className="song-info-track">
-                    Hyperparadise
+                    {name}
                 </div>
                 <div className="song-info-artist">
-                    Flume
+                    {artist}
                 </div>
                 <div>
-                    Electronica
+                    {playlist}
                 </div>
             </div>
         )

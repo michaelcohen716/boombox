@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
-import { jQuery as $ } from 'jquery';
-import ReactAudioPlayer from 'react-audio-player';
 import '../styles/soundBar.css';
 import song from '../assets/audio/HolUp.mp3';
 
@@ -31,7 +29,7 @@ class SoundBar extends Component {
 
     render() {
         const { value } = this.state;
-        console.log(this.props)
+        
         return (
             <div>
                 <div className='slider orientation-reversed'>
@@ -55,6 +53,5 @@ class SoundBar extends Component {
         )
     }
 }
-{/* <ReactAudioPlayer src={song} id="audio"/>     */}
 
 export default SoundBar;

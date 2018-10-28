@@ -1,18 +1,18 @@
-export default tracklist = {
+export default {
     // Hip Hop
-    BigPoppaRemix: {
-        name: 'Big Poppa (Vandelux Remix)',
-        artist: 'Audio Aquarium',
-        playlist: 'Hip Hop',
-        source: 'BigPoppa.mp3',
-        next: 'HolUp'
-    },
-
     HolUp: {
         name: 'Hol \'Up',
         artist: 'Kendrick Lamar',
         playlist: 'Hip Hop',
         source: 'HolUp.mp3',
+        next: 'BigPoppa'
+    },
+
+    BigPoppa: {
+        name: 'Big Poppa (Vandelux Remix)',
+        artist: 'Audio Aquarium',
+        playlist: 'Hip Hop',
+        source: 'BigPoppa.mp3',
         next: 'Grammy'
     },
 
@@ -95,15 +95,40 @@ export default tracklist = {
         artist: 'Tula',
         playlist: 'Electronica',
         source: 'WickedGame.mp3',
-        next: ''
+        next: 'FeelItStill'
     },
 
     // Alternative 
+    FeelItStill: {
+        name: 'Feel It Still (Gryffin Remix)',
+        artist: 'Portugal. The Man',
+        playlist: 'Alternative',
+        source: 'FeelItStill.mp3',
+        next: 'TheLessIKnowTheBetter'
+    },
+
     TheLessIKnowTheBetter: {
         name: 'The Less I Know The Better (Zerky Remix)',
         artist: 'Tame Impala',
         playlist: 'Alternative',
         source: 'TheLessIKnowTheBetter.mp3',
-        next: ''
+        next: 'Breezeblocks'
+    },
+
+    Breezeblocks: {
+        name: 'Breezeblocks (Sebastian Carter Remix)',
+        artist: 'Alt-J',
+        playlist: 'Alternative',
+        source: 'Breezeblocks.mp3',
+        next: 'AmericanEyes'
+    },
+
+    AmericanEyes: {
+        name: 'American Eyes (Gilligan Moss Remix)',
+        artist: 'Promises Ltd.',
+        playlist: 'Alternative',
+        source: 'AmericanEyes.mp3',
+        next: 'HolUp'
     }
+
 }

@@ -7,8 +7,8 @@ import "../styles/belongsTo.css";
 
 class BelongsTo extends Component {
     state = {
-        // photo: "me"    
-        photo: null    
+        photo: "me"    
+        // photo: null     
     }
 
     setRef = webcam => {
@@ -35,18 +35,18 @@ class BelongsTo extends Component {
 
         const profilePhoto = photo ? (
             <div>
-                <img src={photo} className="webcam-photo"/>
+                <img src={photo} className="webcam-photo" alt="webcam"/>
             </div>
         ) : (
-                <Webcam
-                    audio={false}
-                    height={150}
-                    ref={this.setRef}
-                    screenshotFormat="image/jpeg"
-                    width={150}
-                    className="webcam"
-                    videoConstraints={videoConstraints}
-                />
+            <Webcam
+                audio={false}
+                height={150}
+                ref={this.setRef}
+                screenshotFormat="image/jpeg"
+                width={150}
+                className="webcam"
+                videoConstraints={videoConstraints}
+            />
         )
 
         const captureImageSource = photo ? retry : camera;

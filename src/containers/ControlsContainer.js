@@ -1,5 +1,11 @@
-import Controls from '../components/Controls';
 import { connect } from "react-redux";
-import { playOrPause } from '../actions';
+import Controls from '../components/Controls';
+import { 
+    playOrPause,
+    playNextSong     
+} from '../actions';
 
-export default connect(null, { playOrPause })(Controls);
+export default connect(null, { 
+    playOrPause,
+    playNextSong 
+})(Controls);

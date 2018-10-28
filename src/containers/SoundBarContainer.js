@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import SoundBar from '../components/SoundBar';
 import { connect } from "react-redux";
 

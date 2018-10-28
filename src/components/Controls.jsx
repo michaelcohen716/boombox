@@ -13,15 +13,17 @@ class Controls extends Component {
     }
 
     render(){
-        const playOrPause = this.state.paused ? play : pause;
+        const { playNextSong, playOrPause } = this;
+        const playOrPauseImage = this.state.paused ? play : pause;
+
         return (
             <div className="controls">
                 <SoundBar />
-                <div onClick={this.playOrPause} className="play-pause-holder">
-                    <img src={playOrPause} className="play-pause-icon" alt={playOrPause}/>
+                <div onClick={playOrPause} className="play-pause-holder">
+                    <img src={playOrPauseImage} className="play-pause-icon" alt={'playOrPauseImage'}/>
                 </div>
                 <div className="extra-controls">
-                    <img src={fastForward} className="back" alt="back"/>
+                    <img src={fastForward} className="back" alt="back" onClick={playNextSong}/>
                     <img src={fastForward} className="next" alt="next"/>
                     <img src={shuffle} className="shuffle" alt="shuffle"/>
                 </div>
@@ -33,6 +35,10 @@ class Controls extends Component {
     playOrPause = () => {
         this.setState({ paused: !this.state.paused });
         this.props.playOrPause();
+    }
+
+    playNextSong = () => {
+        this.props.playNextSong();
     }
 }
 
