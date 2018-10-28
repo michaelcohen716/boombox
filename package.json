@@ -7,6 +7,7 @@
     "jquery": "^3.3.1",
     "react": "^16.6.0",
     "react-audio-player": "^0.11.0",
+    "react-audio-spectrum": "0.0.9",
     "react-dom": "^16.6.0",
     "react-rangeslider": "^2.2.0",
     "react-redux": "^5.1.0",

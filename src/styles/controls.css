@@ -16,6 +16,7 @@
 .play-pause-icon {
     width: 150px;
     height: auto;
+    cursor: pointer;
 }
 
 .extra-controls {
@@ -26,6 +27,7 @@
     height: 60px;
     width: auto;
     margin: 6px;
+    cursor: pointer;
 }
 
 .back, .shuffle {
@@ -33,5 +35,5 @@
     width: auto;
     transform: rotate(180deg);
     margin: 4px;
-
+    cursor: pointer;
 }
