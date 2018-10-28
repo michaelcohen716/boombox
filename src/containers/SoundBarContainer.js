@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 
 const mapStateToProps = state => {
     return {
-        paused: state.app.paused
+        paused: state.app.paused,
+        nowPlaying: state.app.queue[0]
     }
 }
 
