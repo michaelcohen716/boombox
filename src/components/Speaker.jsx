@@ -39,7 +39,7 @@ class Speaker extends Component {
             <span className={`speaker-speck ${color}`} />
         )
 
-        const specks = [];
+        let specks = [];
         const { beatSeconds } = this.state;
         
         for(let i = 0; i < 5000; i++){
@@ -54,6 +54,8 @@ class Speaker extends Component {
                 specks.push(speck(color));
             }
         }
+
+        specks = specks.slice(0, 40);
 
         return (
             <div className="speakers">
