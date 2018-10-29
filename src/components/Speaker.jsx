@@ -1,62 +1,66 @@
 import React, { Component } from 'react';
-import AudioSpectrum from 'react-audio-spectrum';
+// import AudioSpectrum from 'react-audio-spectrum';
+// import Peaks from 'peaks.js';
 import "../styles/speaker.css";
 import firstSong from '../assets//audio/HolUp.mp3';
 
 class Speaker extends Component {
     state = {
-        audio: firstSong
+        audio: firstSong,
+        beatSeconds: 0
     }
 
-    componentDidMount() {
-        // this.audio = document.getElementById('visualizer');
-        // this.audio.volume = 0;
+    componentWillReceiveProps(nextProps){
+        if(!this.props.playing && nextProps.playing){
+            this.setAnimation();
+        }
+        
+        if (this.props.playing && !nextProps.playing){
+            clearInterval(this.beats);
+            this.setState({ beatSeconds: 0 });
+        }
+
+        if(this.props.playing && this.props.nowPlaying !== nextProps.nowPlaying){
+            clearInterval(this.beats);
+            setTimeout(() => {
+                this.setAnimation();
+            }, 300);
+        }
     }
-
-    componentWillReceiveProps(nextProps) {
-        // if (nextProps.paused) {
-        //     this.audio.pause();
-        // } else {
-        //     this.audio.play();
-        // }
-
-        // if (nextProps.nowPlaying !== this.props.nowPlaying) {
-        //     this.onTrackChange(nextProps.nowPlaying);
-        // }
-    }
-
-    onTrackChange = (nextTrack) => {
-        // const audio = require(`../assets/audio/${nextTrack.source}`);
-        // this.setState({ audio }, () => {
-        //     this.audio.pause();
-        //     this.audio.load();
-        //     if (!this.props.paused) {
-        //         this.audio.play();
-        //     }
-        // })
+    
+    setAnimation = () => {
+        this.beats = setInterval(() => {
+            this.setState({ beatSeconds: this.state.beatSeconds + 1});
+        }, 50);
     }
 
     render(){
+        const speck = (color) => (
+            <span className={`speaker-speck ${color}`} />
+        )
+
+        const specks = [];
+        const { beatSeconds } = this.state;
+        
+        for(let i = 0; i < 5000; i++){
+            if(i > 5 && beatSeconds > 0 && beatSeconds % i === 0 && this.props.playing){
+                let color;
+                if(i % 2 == 0){
+                    color = 'grey';
+                } else {
+                    color = 'blue';
+                }
+
+                specks.push(speck(color));
+            }
+        }
+
         return (
             <div className="speakers">
-                {/* <AudioSpectrum 
-                    id="audio-viz"
-                    height={200}
-                    width={200}
-                    audioId={'visualizer'}
-                    capColor={'red'}
-                    meterWidth={2}
-                    meterCount={512}
-                    meterColor={[
-                        { stop: 0, color: '#f00' },
-                        { stop: 0.5, color: '#0CD7FD' },
-                        { stop: 1, color: 'red' }
-                    ]}
-                    gap={4}/> */}
-                    <audio id="visualizer">
-                        <source src={this.state.audio} />
-                    </audio>
-            </div>
+                <div id="audio-canvas">
+                    {specks}
+                </div>
+            </div>  
         )
     }
 }

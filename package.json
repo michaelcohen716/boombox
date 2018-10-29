@@ -5,6 +5,7 @@
   "dependencies": {
     "babel-loader": "^8.0.4",
     "jquery": "^3.3.1",
+    "peaks.js": "^0.9.13",
     "react": "^16.6.0",
     "react-audio-player": "^0.11.0",
     "react-audio-spectrum": "0.0.9",

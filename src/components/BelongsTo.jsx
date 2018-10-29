@@ -7,8 +7,8 @@ import "../styles/belongsTo.css";
 
 class BelongsTo extends Component {
     state = {
-        photo: "me"    
-        // photo: null     
+        // photo: "me"    
+        photo: null     
     }
 
     setRef = webcam => {

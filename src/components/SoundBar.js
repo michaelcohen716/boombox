@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
 import '../styles/soundBar.css';
 import firstSong from '../assets//audio/HolUp.mp3';
+import AudioSpectrum from 'react-audio-spectrum';
+
 
 class SoundBar extends Component {
     state = {
