@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
 import '../styles/soundBar.css';
 import firstSong from '../assets//audio/HolUp.mp3';
-import AudioSpectrum from 'react-audio-spectrum';
-
 
 class SoundBar extends Component {
     state = {
@@ -11,19 +9,19 @@ class SoundBar extends Component {
         audio: firstSong
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.audio = document.getElementById('audio');
         this.audio.volume = this.state.value / 100;
     }
 
-    componentWillReceiveProps(nextProps){
-        if(nextProps.paused){
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.paused) {
             this.audio.pause();
         } else {
             this.audio.play();
         }
 
-        if(nextProps.nowPlaying !== this.props.nowPlaying){
+        if (nextProps.nowPlaying !== this.props.nowPlaying) {
             this.onTrackChange(nextProps.nowPlaying);
         }
     }
@@ -33,7 +31,7 @@ class SoundBar extends Component {
         this.setState({ audio }, () => {
             this.audio.pause();
             this.audio.load();
-            if(!this.props.paused){
+            if (!this.props.paused) {
                 this.audio.play();
             }
         })
@@ -49,7 +47,7 @@ class SoundBar extends Component {
 
     render() {
         const { value, audio } = this.state;
-        
+
         return (
             <div>
                 <div className='slider orientation-reversed'>

@@ -14,17 +14,17 @@ const NUM_TRACKS = 16;
 const INITIAL_STATE = {
     paused: true,
     queue: [
-        tracklist['HolUp'], 
+        tracklist['HolUp'],
         tracklist['BigPoppa'],
         tracklist['Grammy']
     ]
-}   
+}
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case PLAY_OR_PAUSE: {
             return {
-                ...state, 
+                ...state,
                 paused: !state.paused
             }
         }
@@ -49,7 +49,7 @@ export default (state = INITIAL_STATE, action) => {
                 ...state,
                 queue
             }
-        } 
+        }
 
         case PLAY_RANDOM_SONG: {
             const queue = [];
@@ -58,11 +58,11 @@ export default (state = INITIAL_STATE, action) => {
             const nextTrack = tracklist[trackKey];
             queue.push(nextTrack);
 
-            while(queue.length < QUEUE_LENGTH){
+            while (queue.length < QUEUE_LENGTH) {
                 const newSong = tracklist[queue[queue.length - 1].next];
-                queue.push(newSong);    
+                queue.push(newSong);
             }
-            
+
             return {
                 ...state,
                 queue
@@ -71,7 +71,7 @@ export default (state = INITIAL_STATE, action) => {
 
         case SELECT_QUEUE_ITEM: {
             const queue = state.queue.slice(action.selectedIndex);
-            while (queue.length < QUEUE_LENGTH){
+            while (queue.length < QUEUE_LENGTH) {
                 const newSong = tracklist[queue[queue.length - 1].next];
                 queue.push(newSong);
             }
@@ -86,9 +86,9 @@ export default (state = INITIAL_STATE, action) => {
             const queue = [];
             const trackKeys = Object.keys(tracklist);
 
-            for(let i = 0; i < trackKeys.length; i++){
+            for (let i = 0; i < trackKeys.length; i++) {
                 const track = tracklist[trackKeys[i]];
-                if(track.playlist === action.playlist){
+                if (track.playlist === action.playlist) {
                     queue.push(track);
                     break;
                 }

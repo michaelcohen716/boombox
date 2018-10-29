@@ -9,7 +9,7 @@ export const playlists = [
 ]
 
 class PlaylistButtons extends Component {
-    render(){
+    render() {
         const { activePlaylist } = this.props;
 
         const buttons = playlists.map((p, i) => {

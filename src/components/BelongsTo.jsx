@@ -7,8 +7,7 @@ import "../styles/belongsTo.css";
 
 class BelongsTo extends Component {
     state = {
-        // photo: "me"    
-        photo: null     
+        photo: null
     }
 
     setRef = webcam => {
@@ -16,7 +15,7 @@ class BelongsTo extends Component {
     };
 
     capture = () => {
-        if(this.state.photo){
+        if (this.state.photo) {
             this.setState({ photo: null });
         } else {
             const photo = this.webcam.getScreenshot();
@@ -24,7 +23,7 @@ class BelongsTo extends Component {
         }
     };
 
-    render(){
+    render() {
         const { photo } = this.state;
 
         const videoConstraints = {
@@ -35,19 +34,19 @@ class BelongsTo extends Component {
 
         const profilePhoto = photo ? (
             <div>
-                <img src={photo} className="webcam-photo" alt="webcam"/>
+                <img src={photo} className="webcam-photo" alt="webcam" />
             </div>
         ) : (
-            <Webcam
-                audio={false}
-                height={150}
-                ref={this.setRef}
-                screenshotFormat="image/jpeg"
-                width={150}
-                className="webcam"
-                videoConstraints={videoConstraints}
-            />
-        )
+                <Webcam
+                    audio={false}
+                    height={150}
+                    ref={this.setRef}
+                    screenshotFormat="image/jpeg"
+                    width={150}
+                    className="webcam"
+                    videoConstraints={videoConstraints}
+                />
+            )
 
         const captureImageSource = photo ? retry : camera;
 
@@ -63,7 +62,7 @@ class BelongsTo extends Component {
 
                 </div>
                 <div className="capture">
-                    <img src={captureImageSource} onClick={this.capture} className="camera-icon" alt="capture"/>
+                    <img src={captureImageSource} onClick={this.capture} className="camera-icon" alt="capture" />
                 </div>
             </div>
         )

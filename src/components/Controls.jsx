@@ -12,7 +12,7 @@ class Controls extends Component {
         paused: true
     }
 
-    render(){
+    render() {
         const { playPreviousSong, playNextSong, playOrPause, playRandomSong } = this;
         const { selectPlaylist, activePlaylist } = this.props;
         const playOrPauseImage = this.state.paused ? play : pause;
@@ -21,16 +21,16 @@ class Controls extends Component {
             <div className="controls">
                 <SoundBar />
                 <div onClick={playOrPause} className="play-pause-holder">
-                    <img src={playOrPauseImage} className="play-pause-icon" alt={'playOrPauseImage'}/>
+                    <img src={playOrPauseImage} className="play-pause-icon" alt={'playOrPauseImage'} />
                 </div>
                 <div className="extra-controls">
-                    <img src={fastForward} className="back" alt="back" onClick={playPreviousSong}/>
-                    <img src={fastForward} className="next" alt="next" onClick={playNextSong}/>
-                    <img src={shuffle} className="shuffle" alt="shuffle" onClick={playRandomSong}/>
+                    <img src={fastForward} className="back" alt="back" onClick={playPreviousSong} />
+                    <img src={fastForward} className="next" alt="next" onClick={playNextSong} />
+                    <img src={shuffle} className="shuffle" alt="shuffle" onClick={playRandomSong} />
                 </div>
-                <PlaylistButtons 
+                <PlaylistButtons
                     selectPlaylist={selectPlaylist}
-                    activePlaylist={activePlaylist}/>
+                    activePlaylist={activePlaylist} />
             </div>
         )
     }

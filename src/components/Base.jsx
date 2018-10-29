@@ -3,7 +3,6 @@ import Controls from "../containers/ControlsContainer";
 import Speaker from "../containers/SpeakerContainer";
 import "../App.css";
 
-
 class Base extends Component {
     render(){
         return (
