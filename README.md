@@ -1,1 +1,1 @@
-Ujo Boombox
+Boombox for the Web Project
